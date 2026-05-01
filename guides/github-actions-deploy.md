@@ -25,7 +25,7 @@
 可选：
 
 - `PROD_SSH_PORT`：默认 `322`。
-- `PROD_SSH_USER`：默认 `root`。
+- `PROD_SSH_USER`：默认 `aitooldeploy`。
 - `PROD_CONTENT_PATH`：默认 `/home/AiTool-content`。
 - `PROD_HEALTHCHECK_URL`：默认 `https://owenshen.top/notes`。
 
@@ -37,10 +37,10 @@
 ssh-keygen -t ed25519 -C "github-actions-aitool-content" -f ~/.ssh/aitool-content-actions
 ```
 
-把公钥加入生产服务器允许登录的账号：
+把公钥加入生产服务器允许登录的账号。生产环境建议使用专用部署用户，例如 `aitooldeploy`：
 
 ```bash
-ssh-copy-id -i ~/.ssh/aitool-content-actions.pub -p 322 root@<PROD_SSH_HOST>
+ssh-copy-id -i ~/.ssh/aitool-content-actions.pub -p 322 aitooldeploy@<PROD_SSH_HOST>
 ```
 
 把私钥内容写入 GitHub Secret：

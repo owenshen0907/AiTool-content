@@ -60,7 +60,7 @@ jobs:
         env:
           PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
           PROD_SSH_PORT: ${{ secrets.PROD_SSH_PORT || '322' }}
-          PROD_SSH_USER: ${{ secrets.PROD_SSH_USER || 'root' }}
+          PROD_SSH_USER: ${{ secrets.PROD_SSH_USER || 'aitooldeploy' }}
           PROD_CONTENT_PATH: ${{ secrets.PROD_CONTENT_PATH || '/home/AiTool-content' }}
         run: |
           set -Eeuo pipefail
