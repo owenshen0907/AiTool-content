@@ -1,0 +1,97 @@
+name: Deploy AiTool Content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'posts/**'
+      - 'templates/**'
+      - 'guides/**'
+      - 'README.md'
+      - '.github/workflows/deploy-content.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: aitool-content-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Pull content on production server
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check deployment secrets
+        id: secrets
+        env:
+          PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          PROD_SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+        run: |
+          missing=()
+          [ -n "$PROD_SSH_HOST" ] || missing+=(PROD_SSH_HOST)
+          [ -n "$PROD_SSH_KEY" ] || missing+=(PROD_SSH_KEY)
+
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            printf '::notice::Skipping deploy. Missing required repository secrets: %s\n' "${missing[*]}"
+            exit 0
+          fi
+
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+
+      - name: Configure SSH
+        if: steps.secrets.outputs.configured == 'true'
+        env:
+          PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          PROD_SSH_PORT: ${{ secrets.PROD_SSH_PORT || '322' }}
+          PROD_SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$PROD_SSH_KEY" > ~/.ssh/aitool_content_deploy_key
+          chmod 600 ~/.ssh/aitool_content_deploy_key
+          ssh-keyscan -p "$PROD_SSH_PORT" "$PROD_SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy content repository
+        if: steps.secrets.outputs.configured == 'true'
+        env:
+          PROD_SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+          PROD_SSH_PORT: ${{ secrets.PROD_SSH_PORT || '322' }}
+          PROD_SSH_USER: ${{ secrets.PROD_SSH_USER || 'root' }}
+          PROD_CONTENT_PATH: ${{ secrets.PROD_CONTENT_PATH || '/home/AiTool-content' }}
+        run: |
+          set -Eeuo pipefail
+          ssh \
+            -i ~/.ssh/aitool_content_deploy_key \
+            -p "$PROD_SSH_PORT" \
+            -o BatchMode=yes \
+            "$PROD_SSH_USER@$PROD_SSH_HOST" \
+            'bash -s' -- "$PROD_CONTENT_PATH" "$GITHUB_SHA" <<'REMOTE'
+          set -Eeuo pipefail
+          CONTENT_PATH="$1"
+          EXPECTED_SHA="$2"
+
+          cd "$CONTENT_PATH"
+          git fetch origin main
+          git pull --ff-only origin main
+
+          ACTUAL_SHA="$(git rev-parse HEAD)"
+          if [ "$ACTUAL_SHA" != "$EXPECTED_SHA" ]; then
+            echo "Remote content repo is at $ACTUAL_SHA, expected $EXPECTED_SHA" >&2
+            exit 1
+          fi
+
+          echo "Deployed content commit $(git rev-parse --short HEAD)"
+          REMOTE
+
+      - name: Health check
+        if: steps.secrets.outputs.configured == 'true'
+        env:
+          PROD_HEALTHCHECK_URL: ${{ secrets.PROD_HEALTHCHECK_URL || 'https://owenshen.top/notes' }}
+        run: |
+          set -Eeuo pipefail
+          curl --fail --silent --show-error --location --max-time 20 "$PROD_HEALTHCHECK_URL" > /dev/null
+          echo "Health check passed: $PROD_HEALTHCHECK_URL"
