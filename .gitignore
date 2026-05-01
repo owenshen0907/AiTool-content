@@ -1,0 +1,8 @@
+# 本地暂存的素材,等批量上传脚本接好后再处理
+# 暂时不忽略 — 让你想存什么先 commit 什么,后面再补上传脚本
+# assets-local/
+
+.DS_Store
+*.swp
+.idea/
+.vscode/
