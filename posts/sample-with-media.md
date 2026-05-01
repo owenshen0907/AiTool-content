@@ -1,77 +1,89 @@
 ---
-title: 媒体格式样板
-date: 2026-04-25
-tags: [工具, sample]
-excerpt: 用来演示文章里图片/音频/视频/链接怎么写。
+title: 内容模板示例：一篇有图有声有视频的公开记录
+date: 2026-05-02
+tags: [产品, AI, 工具, sample]
+cover: /notes-template-demo/tokyo-morning-hero.png
+excerpt: 这是一篇给 /notes 用的样板文章，包含主图、细节图、配音和短视频，也顺手演示 callout 和更适合公开记录的版式。
 draft: false
 ---
 
-这篇是用来给自己看渲染效果的样板。后面真正写作时复制这里的语法就行。
+如果记录模块要长期写下去，它就不该只是“有正文就行”的普通博客页。
 
-## 图片
+更像样的写法是：**开头先给一句判断，再给一张主图、一段声音、一个短视频，最后把结论和下一步收起来。** 这样读者会更快进入你的思路，而不是被一整页纯文字挡在外面。
 
-普通图片直接 Markdown 语法:
+:::note{title="这一页在演示什么"}
+这篇文章既是一篇真实的样板内容，也是一份可以直接照着写的模板。
 
-```markdown
-![日落](https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200)
-```
+你以后只要替换标题、判断、图片、音频、视频和结尾结论，就能很快发出一篇更完整的公开记录。
+:::
 
-## 音频
+## 1. 先用一句判断开场
 
-用 HTML `<audio>`:
+今天这篇模板要表达的判断很简单：
 
-```html
-<audio controls src="https://cdn.example.com/audio/sample.mp3"></audio>
-```
+> 记录不是发布任务，而是产品思考本身。
 
-## YouTube 嵌入
+当你把一条记录写成“有情绪、有证据、有媒介”的页面，它就不再只是日记，而会慢慢变成一个人的公开工作样本。
 
-```html
-<iframe
-  width="100%"
-  height="420"
-  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-  frameborder="0"
-  allow="autoplay; encrypted-media; picture-in-picture"
-  allowfullscreen
-></iframe>
-```
+<figure>
+  <img src="/notes-template-demo/tokyo-morning-hero.png" alt="东京清晨的工作台主图" />
+  <figcaption>主图：一个能交代情绪、空间和当天主题的开场镜头。</figcaption>
+</figure>
 
-## B 站嵌入
+## 2. 放一段可直接收听的声音
 
-```html
-<iframe
-  width="100%"
-  height="420"
-  src="//player.bilibili.com/player.html?bvid=BV1Xx411c7mQ&page=1"
-  scrolling="no"
-  border="0"
-  frameborder="no"
-  framespacing="0"
-  allowfullscreen
-></iframe>
-```
+文字适合讲逻辑，声音适合拉近距离。
 
-## 代码块
+如果一篇记录里有一句你真的想让别人“听到”的判断，就值得放一段很短的配音，不必长，但要自然。
 
-支持高亮:
+<figure>
+  <audio controls src="/notes-template-demo/template-narration.mp3"></audio>
+  <figcaption>短配音：用 15 到 25 秒说清这篇记录真正想表达什么。</figcaption>
+</figure>
 
-```ts
-export function greet(name: string) {
-  return `hi, ${name}`;
-}
-```
+## 3. 再补一张细节图，把抽象判断落下来
 
-## 表格 / 任务列表 / 引用
+主图负责“把人带进来”，细节图负责“让人相信这不是空话”。
 
-| 项 | 完成度 |
-|---|---|
-| 列表页 | 100% |
-| 详情页 | 100% |
-| 标签云 | 80% |
+你可以拍桌面、草图、流程页、注释页、手稿、白板、产品截图，重点不是漂亮，而是**让判断有抓手**。
 
-- [x] Markdown 解析
-- [x] iframe 视频
-- [ ] 全文搜索
+<figure>
+  <img src="/notes-template-demo/tokyo-morning-detail.png" alt="工作台细节图" />
+  <figcaption>细节图：让读者看到思考发生在什么地方、以什么状态发生。</figcaption>
+</figure>
 
-> 引用块也支持。配色、间距以站点为准。
+## 4. 最后用一段短视频，把页面节奏收束起来
+
+视频不一定要复杂。哪怕只是一个轻微运动的镜头，只要它能把页面情绪从“看见”推进到“感受到”，它就有意义。
+
+<figure>
+  <video controls playsinline poster="/notes-template-demo/tokyo-morning-hero.png" src="/notes-template-demo/template-video.mp4"></video>
+  <figcaption>短视频：把主图、声音和字幕合成一个节奏更完整的结尾段落。</figcaption>
+</figure>
+
+:::tip{title="推荐模板结构"}
+1. 标题 + 一句话摘要
+2. 一句核心判断
+3. 一张主图
+4. 一段短音频
+5. 一张细节图
+6. 一段短视频
+7. 结尾写清“今天的结论 / 下一步”
+:::
+
+## 5. 这类模板最适合写什么
+
+- 每日产品判断
+- 一次功能更新背后的思路
+- 一次实验记录
+- 一次素材制作过程
+- 一段对外表达前的整理
+
+如果内容本身带有过程、状态和情绪，这种写法会比纯文字更有记忆点。
+
+## 6. 结尾怎么收
+
+最简单的收尾方式，是给出一句真正的结论，再留一个下一步。
+
+- 结论：公开记录应该更像一篇经过设计的工作文档，而不是时间线里的一条碎碎念。
+- 下一步：继续补 gallery、引用卡片和更好的视频嵌入，让 `/notes` 变成真正值得持续写的地方。
