@@ -1,7 +1,6 @@
 ---
 title: 今天的一条记录
 date: 2026-05-02
-series: 生活记录
 tags: [生活, daily]
 excerpt: 用一句话说明今天这篇记录的重点。
 draft: true

@@ -1,7 +1,6 @@
 ---
 title: 苹果 App 上架流程：从 Xcode 打包到 App Store Connect 提审
 date: 2026-05-02
-series: 产品日记
 tags: [工具, iOS, Xcode, App Store, 开发]
 cover: https://owenshen-aitool-assets.oss-cn-shanghai.aliyuncs.com/notes/2026/05/2026-05-02-apple-app-store-release/app-store-release-1-1332259a.png
 excerpt: 记录一次 iOS App 上架的最小完整流程：先在 Xcode 归档上传，再到 App Store Connect 填资料、选构建版本并提交审核。

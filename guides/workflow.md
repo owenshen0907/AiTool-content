@@ -28,6 +28,8 @@ cp templates/daily-note-template.md posts/2026-05-02-my-note.md
 - 标签
 - 媒体 URL
 
+如果这篇文章属于长期专栏，再在 frontmatter 里加 `series`。普通文章不要强行归入专栏。
+
 ## 3. 在站点里预览
 
 ```bash
@@ -66,10 +68,12 @@ git push
 - 模板长期放在 `templates/`
 - 规则长期放在 `guides/`
 - 真正要发的内容只放 `posts/`
+- 专栏引子长期放在 `series/`
 - 不要把“暂时想法草稿”一直堆在根目录
 
 最稳妥的习惯就是：
 
 - 想发的：进 `posts/`
+- 想开的长期专栏：先进 `series/` 写引子
 - 想复用的结构：进 `templates/`
 - 想沉淀的方法：进 `guides/`

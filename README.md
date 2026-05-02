@@ -18,6 +18,7 @@
 ```text
 AiTool-content/
 ├─ posts/                    # 真正会发布到 /notes 的文章
+├─ series/                   # 专栏引子和专栏说明
 ├─ templates/                # 可直接复制的写作模板
 ├─ guides/                   # 规则、标签、媒体写法、工作流说明
 └─ README.md
@@ -68,8 +69,9 @@ git push
 
 1. [内容规则](./guides/content-rules.md)
 2. [标签规则](./guides/tag-guide.md)
-3. [媒体嵌入写法](./guides/media-guide.md)
-4. [工作流说明](./guides/workflow.md)
+3. [专栏规则](./guides/series-guide.md)
+4. [媒体嵌入写法](./guides/media-guide.md)
+5. [工作流说明](./guides/workflow.md)
 
 ## 模板入口
 
@@ -79,6 +81,7 @@ git push
 2. [产品更新模板](./templates/product-update-template.md)
 3. [实验记录模板](./templates/experiment-log-template.md)
 4. [图文音视频模板](./templates/rich-media-note-template.md)
+5. [专栏引子模板](./templates/series-template.md)
 
 ## 当前样板文章
 
@@ -92,4 +95,5 @@ git push
 - 模板和规则也放在内容仓里
 - 所有图片、音频、视频都通过 URL 引用，不把二进制素材提交进来
 - `posts/` 里的文件才会被站点读取
+- `series/` 里的文件会作为专栏说明被站点读取
 - `templates/` 和 `guides/` 只是给你写作时使用，不会直接发布到 `/notes`

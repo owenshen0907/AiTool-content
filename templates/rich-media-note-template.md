@@ -1,7 +1,6 @@
 ---
 title: 一篇有图有声有视频的记录
 date: 2026-05-02
-series: 素材记录
 tags: [产品, AI, 工具]
 cover: https://cdn.example.com/hero.jpg
 excerpt: 用图、音频和短视频，把一条公开记录写得更完整一点。

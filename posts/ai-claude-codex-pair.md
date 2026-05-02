@@ -1,7 +1,6 @@
 ---
 title: Claude 和 Codex 一起干活的几种姿势
 date: 2026-04-28
-series: 普通人的 AI 学习路径
 tags: [ai, AI, 工具, 产品]
 excerpt: 我现在写代码基本不再单开一个 Agent,Claude 负责复杂规划,Codex 负责长跑执行。
 ---

@@ -1,7 +1,6 @@
 ---
 title: 一次实验记录
 date: 2026-05-02
-series: 实验记录
 tags: [AI, 工具, 实验]
 excerpt: 记录一次实验的目标、过程、结果和结论。
 draft: true
