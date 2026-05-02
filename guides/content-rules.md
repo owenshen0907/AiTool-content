@@ -28,6 +28,7 @@
 ---
 title: 标题
 date: 2026-05-02
+series: 产品日记
 tags: [产品, AI, daily]
 cover: https://cdn.example.com/cover.jpg
 excerpt: 一句话摘要
@@ -39,6 +40,7 @@ draft: false
 
 - `title`：必填
 - `date`：必填，格式必须是 `YYYY-MM-DD`
+- `series`：可选，文章所属专栏；填写后 `/notes` 右侧会出现专栏筛选，详情页右侧会展示同专栏文章列表
 - `tags`：推荐填写，支持自由标签
 - `cover`：可选，作为列表封面
 - `excerpt`：可选，列表摘要；不写时网站取正文首段

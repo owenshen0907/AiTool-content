@@ -2,6 +2,7 @@
 title: 我不想再维护一套项目管理系统了：让 Codex 和 Claude Code 自己长出项目脉络
 date: 2026-05-02
 publishedAt: 2026-05-02T12:58:21+09:00
+series: 产品日记
 tags: [产品, AI, 工具, evomap-farmer, AiTool, architecture, devlog]
 excerpt: 我最近越来越不想把开发过程重新抄进一个看板里，所以这次决定把项目进度做成一层 AI 驱动的“项目脉络”：从 Codex 和 Claude Code 的真实迭代里长出来，再经过人工确认，最后推到 AiTool-content 对外公开。
 draft: false

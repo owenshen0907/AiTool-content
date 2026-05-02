@@ -1,6 +1,7 @@
 ---
 title: 某个产品更新
 date: 2026-05-02
+series: 产品日记
 tags: [产品, AI]
 cover: https://cdn.example.com/cover.jpg
 excerpt: 这次更新解决了什么问题，带来了什么变化。
