@@ -4,7 +4,7 @@ date: 2026-05-02
 tags: [产品, AI, 工具, sample]
 cover: /notes-template-demo/tokyo-morning-hero.png
 excerpt: 这是一篇给 /notes 用的样板文章，包含主图、细节图、配音和短视频，也顺手演示 callout 和更适合公开记录的版式。
-draft: false
+draft: true
 ---
 
 如果记录模块要长期写下去，它就不该只是“有正文就行”的普通博客页。
