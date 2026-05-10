@@ -79,10 +79,8 @@ draft: false
         <path d="M0,0 L12,6 L0,12 z" fill="#64748b"></path>
       </marker>
     </defs>
-
     <text x="70" y="80" font-size="34" font-weight="700" fill="#0f172a">我想要的不是“再记一遍”，而是“顺着真实工作流把脉络长出来”</text>
     <text x="70" y="118" font-size="18" fill="#475569">输入、提炼、公开，各做各的事，不再让一个系统硬扛全部职责。</text>
-
     <rect x="70" y="170" width="300" height="380" rx="28" fill="url(#flowA)" stroke="#bfdbfe"></rect>
     <text x="100" y="220" font-size="18" font-weight="700" fill="#1d4ed8">01 / 私有工作流</text>
     <text x="100" y="265" font-size="34" font-weight="700" fill="#0f172a">EvoMap Farmer</text>
@@ -92,7 +90,6 @@ draft: false
     <text x="100" y="421" font-size="16" fill="#334155">• 今日工作收件箱 + AI 提炼</text>
     <text x="100" y="454" font-size="16" fill="#334155">• project_thread 私有长期记忆</text>
     <text x="100" y="507" font-size="15" fill="#475569">它负责“记全”，但不直接对外说。</text>
-
     <rect x="450" y="170" width="300" height="380" rx="28" fill="url(#flowB)" stroke="#bbf7d0"></rect>
     <text x="480" y="220" font-size="18" font-weight="700" fill="#15803d">02 / 内容草稿层</text>
     <text x="480" y="265" font-size="34" font-weight="700" fill="#0f172a">AiTool-content</text>
@@ -102,7 +99,6 @@ draft: false
     <text x="480" y="421" font-size="16" fill="#334155">• draft / publish 分离</text>
     <text x="480" y="454" font-size="16" fill="#334155">• 模板、标签、写作节奏统一</text>
     <text x="480" y="507" font-size="15" fill="#475569">它负责“说清”，但不负责采集原始证据。</text>
-
     <rect x="830" y="170" width="300" height="380" rx="28" fill="url(#flowC)" stroke="#fed7aa"></rect>
     <text x="860" y="220" font-size="18" font-weight="700" fill="#c2410c">03 / 对外呈现层</text>
     <text x="860" y="265" font-size="34" font-weight="700" fill="#0f172a">AiTool /notes</text>
@@ -112,7 +108,6 @@ draft: false
     <text x="860" y="421" font-size="16" fill="#334155">• 图文音视频呈现</text>
     <text x="860" y="454" font-size="16" fill="#334155">• 以后再做项目页 / series 页</text>
     <text x="860" y="507" font-size="15" fill="#475569">它负责“让别人看懂”，不负责内部判断。</text>
-
     <line x1="370" y1="360" x2="450" y2="360" stroke="#64748b" stroke-width="4" marker-end="url(#arrow)"></line>
     <line x1="750" y1="360" x2="830" y2="360" stroke="#64748b" stroke-width="4" marker-end="url(#arrow)"></line>
     <text x="386" y="338" font-size="14" fill="#475569">人工确认后</text>
@@ -236,14 +231,11 @@ draft: false
     </defs>
     <text x="72" y="86" font-size="34" font-weight="700" fill="#0f172a">一条线程真正的演进方式</text>
     <text x="72" y="124" font-size="18" fill="#475569">不是从“待办卡片”开始，而是从真实工作证据开始，经过提炼，再长成对外记录。</text>
-
     <rect x="72" y="180" width="1056" height="120" rx="28" fill="#f8fafc" stroke="#e2e8f0"></rect>
     <text x="108" y="224" font-size="18" font-weight="700" fill="#0f172a">第一层：私有证据</text>
     <text x="108" y="262" font-size="16" fill="#334155">Codex prompt / Claude Code prompt / agent summary / files changed / validation</text>
     <text x="108" y="292" font-size="15" fill="#64748b">这里尽量记全，但不直接公开。</text>
-
     <line x1="600" y1="300" x2="600" y2="356" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrowB)"></line>
-
     <rect x="72" y="360" width="1056" height="160" rx="28" fill="#eff6ff" stroke="#bfdbfe"></rect>
     <text x="108" y="406" font-size="18" font-weight="700" fill="#1d4ed8">第二层：项目脉络 thread</text>
     <text x="108" y="445" font-size="16" fill="#334155">主题：统一工作台简化</text>
@@ -252,9 +244,7 @@ draft: false
     <text x="760" y="445" font-size="16" fill="#334155">阻塞：还缺“项目脉络”对象</text>
     <text x="760" y="475" font-size="16" fill="#334155">下一条 prompt：从今日工作收件箱里抽 project_progress</text>
     <text x="760" y="505" font-size="16" fill="#334155">可公开：是</text>
-
     <line x1="600" y1="520" x2="600" y2="576" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrowB)"></line>
-
     <rect x="72" y="580" width="1056" height="100" rx="28" fill="#f0fdf4" stroke="#bbf7d0"></rect>
     <text x="108" y="624" font-size="18" font-weight="700" fill="#15803d">第三层：公开稿件</text>
     <text x="108" y="662" font-size="16" fill="#334155">一篇真的能发到 AiTool-content 的文章，讲清“为什么这么做、怎么拆、下一步怎么长”。</text>
